@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Entrada del archivo AC." />
+  <title>AC — Entrada</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Karla:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div id="progress-bar"></div>
+
+  <header class="minimal-header">
+    <a class="brand-mark" href="index.html" aria-label="Inicio AC">AC</a>
+    <a class="back-link" href="index.html">← Volver al archivo</a>
+  </header>
+
+  <main>
+    <article class="post-shell" id="post-shell" hidden>
+      <header class="post-page-header fade-in">
+        <div class="post-header-category" id="post-category"></div>
+        <h1 class="post-header-title" id="post-title"></h1>
+        <p class="post-header-excerpt" id="post-excerpt"></p>
+        <div class="post-header-meta">
+          <span id="post-date"></span>
+          <span id="post-read"></span>
+        </div>
+      </header>
+
+      <div class="post-body fade-in" id="post-body" style="animation-delay: 0.15s"></div>
+    </article>
+
+    <section class="empty-state post-empty" id="post-empty" hidden>
+      <h1>Entrada no encontrada.</h1>
+      <p>Puede que no exista, que esté en borrador o que el universo haya decidido hacer mantenimiento sin avisar.</p>
+      <a class="ghost-button" href="index.html">Volver al archivo</a>
+    </section>
+  </main>
+
+  <footer class="site-footer compact-footer">
+    <span>AC © <span id="year"></span></span>
+    <a href="index.html">Todas las entradas</a>
+  </footer>
+
+  <script type="module" src="js/post.js"></script>
+</body>
+</html>
