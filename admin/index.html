@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>AC — Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Karla:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body class="admin-body">
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="minimal-header admin-topbar">
+    <a class="brand-mark" href="../index.html" aria-label="Volver al blog">AC</a>
+    <div class="admin-actions">
+      <a class="back-link" href="../index.html">Ver blog</a>
+      <button class="ghost-button small" id="logout-button" type="button" hidden>Salir</button>
+    </div>
+  </header>
+
+  <main class="admin-layout">
+    <section class="admin-login" id="login-view">
+      <p class="eyebrow">modo admin</p>
+      <h1>La puerta escondida.</h1>
+      <p>Solo puede entrar el correo autorizado. Si alguien más llega aquí, tendrá una experiencia espiritual con un botón que no le sirve para nada.</p>
+      <button class="primary-button" id="login-button" type="button">Ingresar con Google</button>
+      <p class="form-note" id="login-note"></p>
+    </section>
+
+    <section class="admin-panel" id="admin-view" hidden>
+      <aside class="admin-sidebar">
+        <div>
+          <p class="eyebrow">panel</p>
+          <h1>Editor AC</h1>
+          <p class="section-note">Crear, editar, ocultar y publicar. Sin Storage, sin imágenes, sin adornos innecesarios haciendo fila para romperse.</p>
+        </div>
+
+        <button class="primary-button full" id="new-post-button" type="button">Nueva entrada</button>
+        <div class="admin-list" id="admin-posts-list" aria-label="Entradas guardadas"></div>
+      </aside>
+
+      <section class="editor-panel">
+        <form class="editor-form" id="post-form">
+          <input type="hidden" id="post-id" />
+
+          <div class="editor-grid two-cols">
+            <label>
+              <span>Título</span>
+              <input id="title-input" type="text" placeholder="Título de la entrada" required />
+            </label>
+            <label>
+              <span>Cuaderno</span>
+              <input id="category-input" type="text" placeholder="Música, vida, memoria…" required />
+            </label>
+          </div>
+
+          <label>
+            <span>Subtítulo / resumen corto</span>
+            <input id="excerpt-input" type="text" placeholder="Una frase que deje la puerta medio abierta" />
+          </label>
+
+          <div class="editor-grid three-cols">
+            <label>
+              <span>Estado</span>
+              <select id="status-input">
+                <option value="draft">Borrador</option>
+                <option value="published">Publicado</option>
+                <option value="hidden">Oculto</option>
+                <option value="archived">Archivado</option>
+              </select>
+            </label>
+            <label class="checkbox-field">
+              <input id="featured-input" type="checkbox" />
+              <span>Destacar</span>
+            </label>
+            <label>
+              <span>Tags</span>
+              <input id="tags-input" type="text" placeholder="arte, duelo, futuro" />
+            </label>
+          </div>
+
+          <label>
+            <span>Contenido en Markdown</span>
+            <textarea id="content-input" rows="18" placeholder="# Título interno&#10;&#10;Escribe aquí. Puedes usar **negrita**, *cursiva*, citas con > y subtítulos con ##." required></textarea>
+          </label>
+
+          <div class="editor-actions">
+            <button class="primary-button" type="submit">Guardar entrada</button>
+            <button class="ghost-button" id="preview-button" type="button">Vista previa</button>
+            <button class="danger-button" id="delete-button" type="button" hidden>Eliminar</button>
+          </div>
+
+          <p class="form-note" id="editor-note"></p>
+        </form>
+
+        <section class="preview-card" id="preview-card" hidden>
+          <div class="section-label">— Vista previa</div>
+          <article class="post-body preview-body" id="preview-body"></article>
+        </section>
+      </section>
+    </section>
+  </main>
+
+  <script type="module" src="../js/admin.js"></script>
+</body>
+</html>
